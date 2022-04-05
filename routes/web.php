@@ -15,9 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 
 //CommentBankController
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\CombinedController::class, 'index'])->name('homepage');
+Route::post('/', [App\Http\Controllers\CombinedController::class, 'store'])->name('homepage');
 
 Auth::routes();
 
