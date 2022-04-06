@@ -34,10 +34,14 @@ class CombinedController extends Controller
      */
     public function store(StoreCombinedRequest $request)
     {
-        //Combine reflections and results using collections on docs
-        //pass combined reflect and reference to view, output
 
-        return view('results')->with('results'),collect($request->input('reflections'))->concat($request->input('references'))->all();    
+        if (!$request->has('reflections') && !$request->has('references')){
+            return redirect('/')
+            ->withErrors(['message' => 'The combined could not be saved.'])->withInput();
+        }
+
+        return view('results')->with('results',collect($request->input('reflections') ?? [])->concat($request->input('references') ?? [])->all());
+
     }
 
     /**
