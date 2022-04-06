@@ -45,7 +45,10 @@ class CombinedController extends Controller
         //Combine reflections and results using collections on docs
         //pass combined reflect and reference to view, output
 
-         return view('results')->with('results',$request->get('reflections','references'));
+        return view('results')->collect([$reflections])->concat([$references])->all();
+
+        
+        
     }
 
     /**
