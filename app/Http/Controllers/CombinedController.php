@@ -10,11 +10,7 @@ use App\Models\Reference;
 
 class CombinedController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function index()
     {
         $reflections = Reflection::all();
@@ -24,11 +20,7 @@ class CombinedController extends Controller
             ->with('references',$references);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function create()
     {
         //
@@ -45,7 +37,7 @@ class CombinedController extends Controller
         //Combine reflections and results using collections on docs
         //pass combined reflect and reference to view, output
 
-        return view('results')->with('results', collect($request->input('reflections')))->concat($request->input('references'))->all();    
+        return view('results')->with('results'),collect($request->input('reflections'))->concat($request->input('references'))->all();    
     }
 
     /**
