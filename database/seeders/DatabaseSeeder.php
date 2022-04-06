@@ -7,14 +7,10 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
+    //Seeds the database with the reflection and reference seeders
+
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
         $this->call([
             ReflectionSeeder::class,
             ReferenceSeeder::class,

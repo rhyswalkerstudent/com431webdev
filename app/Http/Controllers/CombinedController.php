@@ -35,11 +35,15 @@ class CombinedController extends Controller
     public function store(StoreCombinedRequest $request)
     {
 
+        //Checking if the request has anything in it, if not then no comments have been chosen and the error message is displayed 
+
         if (!$request->has('reflections') && !$request->has('references')){
             return redirect('/')
             ->withErrors(['message' => 'No comments were chosen. Please choose one or more comments from the list below.'])->withInput();
         }
 
+        //returns the selected comments from the checkbox lists, allowing for either reflections or references to have not been selected.
+    
         return view('results')->with('results',collect($request->input('reflections') ?? [])->concat($request->input('references') ?? [])->all());
 
     }

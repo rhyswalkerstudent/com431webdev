@@ -9,11 +9,8 @@ use Illuminate\Support\Facades\DB;
 
 class ReferenceSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    //adding the references from the excel sheet into the database linked with this site
+
     public function run()
     {
         DB::table('references')->insert(

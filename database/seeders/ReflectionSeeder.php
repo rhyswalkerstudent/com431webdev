@@ -9,11 +9,9 @@ use Illuminate\Support\Facades\DB;
 
 class ReflectionSeeder extends Seeder
 {   
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    //adding the reflections from the excel sheet into the database linked with this site
+
+
     public function run()
     {
         DB::table('reflections')->insert(

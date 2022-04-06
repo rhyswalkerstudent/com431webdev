@@ -5,6 +5,10 @@
     <div class="col-lg-6">
         <h1>Please Select Any Comments Which Are Applicable to the Student's Work.</h1>
         <br>
+    </div>
+
+    {{--Error Alert--}}
+
     @if ($errors->any())
     <div class="alert alert-danger">
       <ul>

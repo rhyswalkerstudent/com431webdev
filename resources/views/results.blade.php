@@ -3,6 +3,9 @@
 @section('content')
 <div class="container">
     <h1>Comments Selected</h1>
+
+    {{--Shows the results of what comments were selected in a card, each separated into paragraphs for easier readability--}}
+
     <div class="row">
         <div class="col-12">
             <div class="card">
