@@ -33,6 +33,18 @@ class ReflectionSeeder extends Seeder
             [
                 'title' => "Reflections are presented in the form of a diary.",
             ]);
+        DB::table('reflections')->insert(
+            [
+                'title' => "The reflections section is trivial in nature and adds little value to the document.",
+            ]);
+        DB::table('reflections')->insert(
+            [
+                'title' => "The reflections included are largely experiential in nature but do not focus sufficiently on the learning experience through the work and discoveries and aspects of enlightenment that have arisen along the way."
+            ]);
+            DB::table('reflections')->insert(
+            [
+                'title' => "The reflections have been utilised for the wrong purpose e.g. conclusions have been presented under the heading of reflections; this section includes complaints arising from the related work and perceived load.",
+            ]);
 
     }
 }
