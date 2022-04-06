@@ -6,6 +6,7 @@ use App\Http\Requests\StoreCombinedRequest;
 use App\Http\Requests\UpdateCombinedRequest;
 use App\Models\Combined;
 use App\Models\Reflection;
+use App\Models\Reference;
 
 class CombinedController extends Controller
 {
@@ -17,9 +18,10 @@ class CombinedController extends Controller
     public function index()
     {
         $reflections = Reflection::all();
+        $references = Reference::all();
         return view('combined')
             ->with('reflections',$reflections)
-            ->with('references',[]);
+            ->with('references',$references);
     }
 
     /**
