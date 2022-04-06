@@ -37,7 +37,7 @@ class CombinedController extends Controller
 
         if (!$request->has('reflections') && !$request->has('references')){
             return redirect('/')
-            ->withErrors(['message' => 'The combined could not be saved.'])->withInput();
+            ->withErrors(['message' => 'No comments were chosen. Please choose one or more comments from the list below.'])->withInput();
         }
 
         return view('results')->with('results',collect($request->input('reflections') ?? [])->concat($request->input('references') ?? [])->all());
