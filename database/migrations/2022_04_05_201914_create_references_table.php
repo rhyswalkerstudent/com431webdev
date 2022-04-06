@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('references', function (Blueprint $table) {
             $table->id();
-            $table->string("title");
+            $table->longtext("longtext");
             $table->timestamps();
         });
     }

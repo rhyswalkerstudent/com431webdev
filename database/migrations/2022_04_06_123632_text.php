@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reflections', function (Blueprint $table) {
-            $table->id();
-            $table->longtext("longtext");
-            $table->timestamps();
+        Schema::table('reflections', function (Blueprint $table) {
+            //
         });
     }
 
@@ -27,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reflections');
+        Schema::table('reflections', function (Blueprint $table) {
+            //
+        });
     }
 };

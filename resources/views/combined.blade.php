@@ -5,22 +5,34 @@
     <div class="col-lg-6">
         this is an example
     </div>
-    {{-- we want a form to handle selection of references and reflections --}}
     <form method="POST" action="/">
         @csrf
 
-        @foreach ($reflections as $reflection)
+        {{--Reflections checkboxes loop--}}
+
+    @foreach ($reflections as $reflection)
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="reflections[]" value="{{$reflection->longtext}}" id="reflection_{{$loop->index}}">
+        <label class="form-check-label" for="reflection_{{$loop->index}}">
+            {{$reflection->longtext}}
+          </label>
+        </div>
+        @endforeach
+
+
+        {{--References checkboxes loop--}}
+
+         @foreach ($references as $reference)
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="reflections[]" value="{{$reflection->title}}" id="reflection_{{$loop->index}}">
-            <label class="form-check-label" for="reflection_{{$loop->index}}">
-              {{$reflection->title}}
+            <input class="form-check-input" type="checkbox" name="references[]" value="{{$reference->longtext}}" id="reference_{{$loop->index}}">
+            <label class="form-check-label" for="reference_{{$loop->index}}">
+              {{$reference->longtext}}
             </label>
           </div>
          @endforeach
-         <button type="submit" class="btn btn-primary">Submit</button>
+         
+    <button type="submit" class="btn btn-primary">Submit</button>
 
     </form>
-    {{-- Loop over array of $reflections --}}
-
 </div>
 @endsection
