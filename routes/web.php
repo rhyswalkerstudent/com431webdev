@@ -21,3 +21,5 @@ Route::post('/', [App\Http\Controllers\CombinedController::class, 'store'])->nam
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/createRefe', [App\Http\Controllers\HomeController::class, 'refCreate'])->name('create');
+Route::get('/createRelf', [App\Http\Controllers\HomeController::class, 'reflCreate'])->name('create');

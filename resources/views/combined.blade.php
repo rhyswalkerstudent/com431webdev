@@ -6,7 +6,6 @@
         <h1>Please Select Any Comments Which Are Applicable to the Student's Work.</h1>
         <br>
     </div>
-
     {{--Error Alert--}}
 
     @if ($errors->any())
@@ -51,5 +50,10 @@
     <button type="submit" class="btn btn-primary">Submit</button>
 
     </form>
+
+    @auth
+    <a href="\createRefl" class="text-xs font-bold uppercase">Create New Reflection</a>
+    <a href="\createRefe" class="text-xs font-bold uppercase">Create New Reference</a>
+    @endauth
 </div>
 @endsection
