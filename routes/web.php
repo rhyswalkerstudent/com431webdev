@@ -24,6 +24,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/references/create', [App\Http\Controllers\ReferenceController::class, 'create'])->name('references.create');
 Route::get('/reflections/create', [App\Http\Controllers\ReflectionController::class, 'create'])->name('reflections.create');
+Route::post('/references/store', [App\Http\Controllers\ReferenceController::class, 'store'])->name('references.store');
+Route::post('/reflections/store', [App\Http\Controllers\ReflectionController::class, 'store'])->name('reflections.store');
 
 //Route::get('/createRefe', [App\Http\Controllers\HomeController::class, 'refCreate'])->name('create');
 //Route::get('/createRelf', [App\Http\Controllers\HomeController::class, 'reflCreate'])->name('create');

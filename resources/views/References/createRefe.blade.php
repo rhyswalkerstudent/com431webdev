@@ -5,7 +5,12 @@
     <div class="col-lg-6">
         <h3>Enter The Comment You Wish to Add To The References Comment Bank</h3>
         <br>
-        <form method="POST" action="/submit">
+        @if (session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+       </div>
+       @endif
+        <form method="POST" action="{{route('references.store')}}">
 
             @csrf
 
@@ -16,7 +21,7 @@
                 </label>
             
                 <input class="boarder border-gray-400 p-2 w-full"
-                       type="longtext"
+                       type="text"
                        name="longtext"
                        id="longtext"
                        required

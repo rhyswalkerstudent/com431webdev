@@ -5,9 +5,25 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreReflectionRequest;
 use App\Http\Requests\UpdateReflectionRequest;
 use App\Models\Reflection;
+use Illuminate\Http\Request;
+
 
 class ReflectionController extends Controller
 {
+    
+    
+ /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //This forces a user to be authenticated in order to add new references
+        //$this->middleware('auth');
+    }
+    
+    
     /**
      * Display a listing of the resource.
      *
@@ -26,18 +42,25 @@ class ReflectionController extends Controller
      */
     public function create()
     {
-        //
+        return view('Reflections.createRefl');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreReflectionRequest  $request
+     * @param  \App\Http\Requests\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreReflectionRequest $request)
+    public function store(Request $request)
     {
-        //
+        
+      $reflection = new Reflection;
+ 
+      $reflection->longtext = $request->longtext;
+
+      $reflection->save();
+
+      return redirect('/reflections/create')->with('status', 'Reflection created!');
     }
 
     /**
