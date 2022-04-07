@@ -23,3 +23,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/createRefe', [App\Http\Controllers\HomeController::class, 'refCreate'])->name('create');
 Route::get('/createRelf', [App\Http\Controllers\HomeController::class, 'reflCreate'])->name('create');
+
+Route::view('createRefe','createRefe');
+Route::post('submit','Reference@save');
