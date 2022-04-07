@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreReferenceRequest;
 use App\Http\Requests\UpdateReferenceRequest;
 use App\Models\Reference;
+use Illuminate\Http\Request;
+
 
 class ReferenceController extends Controller
 {
@@ -25,7 +27,7 @@ class ReferenceController extends Controller
      */
     public function create()
     {
-        //
+        return view('createRefe');
     }
 
     /**

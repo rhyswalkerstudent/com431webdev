@@ -10,8 +10,4 @@ class Reference extends Model
 {
     use HasFactory;
 
-    function save(Request $req)
-    {
-        print_r($req->input());
-    }
 }
